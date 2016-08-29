@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/jquery.fullPage.css" />
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.fn.fullpage({
+                slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                navigation: true,
+                easing: 'easeInOutCubic',
+                scrollingSpeed: 700,
+                touchSensitivity: 5,
+                normalScrollElementTouchThreshold: 5,
+            });
+        });
+    </script>
+    <style type="text/css">
+        .section {font-size:30px;color:#fff;text-align:center;}
+        .page1_animate p {animation:aniPage1 0.5s alternate linear;}
+        @keyframes aniPage1 {
+            0% {transform:rotate(0deg) translate(0,500px);}
+            100% {transform:rotate(360deg) translate(0px,0);}
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="page1" class="section page1_animate">
+    <h3>第一屏</h3>
+    <p>fullPage.js — 项目导航演示</p>
+</div>
+<div id="page2" class="section">
+    <h3>第二屏</h3>
+    <p>请查看右边的圆圈</p>
+</div>
+<div id="page3" class="section">
+    <h3>第三屏</h3>
+    <p>圆圈还可以设置位置，颜色，加上 tip，点击可以控制</p>
+</div>
+<div id="page4" class="section">
+    <h3>第四屏</h3>
+    <p>这是最后一屏</p>
+</div>
+
+
+</body>
+</html>
