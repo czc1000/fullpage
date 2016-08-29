@@ -17,13 +17,37 @@
                 scrollingSpeed: 700,
                 touchSensitivity: 5,
                 normalScrollElementTouchThreshold: 5,
+                afterLoad: function(anchorLink, index){
+                    switch (index){
+                        case 2:
+                            $(".section2 .onplay").show();
+                            $(".section2").addClass("section2_animate");
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                onLeave: function(index, direction){
+                    switch (index){
+                        case 2:
+                            $(".section2").removeClass("section2_animate");
+                                setTimeout(function(){
+                                    $(".section2 .onplay").hide();
+                                },1000);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+
             });
         });
     </script>
     <style type="text/css">
         .section {font-size:30px;color:#fff;text-align:center;}
-        .page1_animate p {animation:aniPage1 0.5s alternate linear;}
-        @keyframes aniPage1 {
+        .section2_animate p {animation:aniPage2 0.5s alternate linear;}
+        @keyframes aniPage2 {
             0% {transform:rotate(0deg) translate(0,500px);}
             100% {transform:rotate(360deg) translate(0px,0);}
         }
@@ -32,19 +56,22 @@
 </head>
 <body>
 
-<div id="page1" class="section page1_animate">
+<div class="section section1">
     <h3>第一屏</h3>
     <p>fullPage.js — 项目导航演示</p>
 </div>
-<div id="page2" class="section">
+<div class="section section2">
     <h3>第二屏</h3>
-    <p>请查看右边的圆圈</p>
+    <p class="onplay">请查看右边的圆圈</p>
 </div>
-<div id="page3" class="section">
-    <h3>第三屏</h3>
-    <p>圆圈还可以设置位置，颜色，加上 tip，点击可以控制</p>
+<div class="section section3">
+
+    <div class="slide"><h3>第三屏的第一屏</h3></div>
+    <div class="slide"><h3>第三屏的第二屏</h3></div>
+    <div class="slide"><h3>第三屏的第三屏</h3></div>
+
 </div>
-<div id="page4" class="section">
+<div class="section section4">
     <h3>第四屏</h3>
     <p>这是最后一屏</p>
 </div>
